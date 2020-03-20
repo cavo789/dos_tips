@@ -18,7 +18,9 @@ If you want to change this:
 1. Run `regedit`
 2. Navigate to `Computer\HKEY_CURRENT_USER\Software\Microsoft\Command Processor` 
 3. Create a new key `Autorun`, string one
-4. Type a `cd` (change directory) command followed by your preferred one like `cd c:\christophe\repositories`
+4. Type a `cd` (change directory) command followed by your preferred one like `IF /I x"%COMSPEC%"==x%CMDCMDLINE% (cd /D c:\christophe\repositories)`
+
+*The `IF` statement here above allows to execute the `cd` command only when the DOS prompt is started from the `CMD` command under Windows and not from a current, existing, DOS session.* 
 
 From now, when you'll start `CMD` you'll be directly in that folder.
 
